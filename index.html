@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quote Generator</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+       
+    body{
+        background-image: url(../background\ image.jpg);
+        
+        
+    }
+    
+    .container{
+       text-align: center;
+       width: 40%;
+       margin: 8% auto;
+   }
+   @media (max-width:1399px){
+    .container{
+        width: 60%;
+    }
+   }
+   @media (max-width:991px){
+    .container{
+        width: 100%;
+    }
+   }
+
+    .heading{
+        margin:5% auto;
+        background-color: rgba(0, 0, 0, 0.863);
+        color: white;
+        border: 2px solid darkgoldenrod;
+        width: 80%;
+        border-radius: 100px;
+    }
+    .heading-text{
+        font-size: 2.1rem;
+        padding: 2px;
+    }
+   
+    .main{
+        background-color:#001f3fbe;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px 2px darkgoldenrod;
+
+    }
+
+    .quotes{
+        /* text-align: center; */
+        /* border: 1px solid darkgoldenrod; */
+        padding: 20px;
+        margin: 5px 0px;
+        color: white;
+        font-size: 1.2rem;
+        /* word-wrap: break-word; */
+        /* word-break: break-word; */
+       
+    }
+    .person{
+        margin:4% 25%;
+        /* border: 1px solid red; */
+        width: 50%;
+        padding: 10px;
+        font-size: 1.8rem;
+        color: white;
+        letter-spacing: 2px;
+        font-weight:400;
+       text-transform:uppercase;
+        /* margin: auto; */
+
+        
+    }
+
+    .next{
+       padding: 10px 15px;
+       width: 30%;
+       border: none;
+       background-color: darkgoldenrod;
+       color: white;
+       font-size: 1.5rem;
+        
+    }
+    .next:active{
+        background-color:transparent;
+        color: transparent;
+        /* color: black; */
+    }
+    </style>
+  </head>
+  <body>
+   
+    <div class="container">
+        <div class="row">
+            <div class="col-12  heading ">
+                <h1 class="heading-text">Javascript Quote Generator</h1>
+            </div>
+            <div class="col-12 main">
+                <div class="row">
+                 <div class="col-12"></div> 
+                <p class="quotes ">
+                    "Three things cannot be long hidden: the sun, the moon, and the truth."
+                </p>
+            </div>
+            <div class="col-12">
+                <p class="person">Buddha</p>
+            </div>
+            <div class="col-12">
+                <button class="next">Next quote</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+const quotes = {
+    quote1: ['"You have the right to work, but never to the fruit of work."', 'Bhagavad Gita'],
+    quote2: ['"Peace comes from within. Do not seek it without."', 'Buddha'],
+    quote3: ['"The only true wisdom is in knowing you know nothing."', 'Socrates'],
+    quote4: ['"The soul is neither born, and nor does it die."', 'Bhagavad Gita'],
+    quote5: ['"There is no way to happiness – happiness is the way."', 'Thich Nhat Hanh'],
+    quote6: ['"Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment."', 'Buddha'],
+    quote7: ['"The best way to find yourself is to lose yourself in the service of others."', 'Mahatma Gandhi'],
+    quote8: ['"The mind acts like an enemy for those who do not control it."', 'Bhagavad Gita'],
+    quote9: ['"When you want something, all the universe conspires in helping you to achieve it."', 'Paulo Coelho'],
+    quote10: ['"In the practice of tolerance, one\'s enemy is the best teacher."', 'Dalai Lama'],
+    quote11: ['"Be yourself; everyone else is already taken."', 'Oscar Wilde'],
+    quote12: ['"When meditation is mastered, the mind is unwavering like the flame of a lamp in a windless place."', 'Bhagavad Gita'],
+    quote13: ['"Your task is not to seek for love, but merely to seek and find all the barriers within yourself that you have built against it."', 'Rumi'],
+    quote14: ['"Everything is created twice, first in the mind and then in reality."', 'Robin Sharma'],
+    quote15: ['"Let him who would move the world first move himself."', 'Socrates'],
+    quote16: ['"He who lives in harmony with himself lives in harmony with the universe."', 'Marcus Aurelius'],
+    quote17: ['"The power of God is with you at all times; through the activities of mind, senses, breathing, and emotions; and is constantly doing all the work using you as a mere instrument."', 'Bhagavad Gita'],
+    quote18: ['"What you seek is seeking you."', 'Rumi'],
+    quote19: ['"When I let go of what I am, I become what I might be."', 'Lao Tzu'],
+    quote20: ['"Silence is a source of great strength."', 'Lao Tzu']
+};
+
+
+   
+    const button=document.querySelector('.next');
+    const quote=document.querySelector('.quotes');
+    const person=document.querySelector('.person');
+    button.addEventListener('click',addQuotes);
+
+    
+    function addQuotes(){
+    
+    const keys = Object.keys(quotes);
+    const randomIndex = Math.floor(Math.random() * keys.length);
+    const randomQuote = quotes[keys[randomIndex]];
+    
+
+    quote.innerHTML=randomQuote[0]
+    person.innerHTML=randomQuote[1];
+    }
+ 
+
+</script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
